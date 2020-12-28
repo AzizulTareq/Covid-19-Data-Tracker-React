@@ -4,10 +4,6 @@ import './item.css'
 const Item = ({ data }) => {
     
     const renderItem = data.map((d) => {
-
-     if(d.country != 'All' && d.country != 'Europe')
-    {
-
         return (
             <div key={d.country}>
                 <div className="ui card">
@@ -59,10 +55,11 @@ const Item = ({ data }) => {
 </div>
             
         )
-    }
+    
     })
 
     return <div className="grid">{renderItem}</div>
 }
 
 export default Item
+
