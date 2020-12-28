@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanalei+Fill&family=Roboto&display=swap');
+
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: 12px;
+    color: rgb(218, 86, 86);
   }
   
   .item {
@@ -9,9 +12,12 @@
     background-color: #eee;
   }
 
-  .every-card {
-      background-color: blueviolet;
-  }
+  body {
+    background-image: url("../components/coronavirus-purple.jpg");
+  
+   }
+
+
 
   .second-word-formatting {
           float: right;
