@@ -1,0 +1,14 @@
+.search-bar {
+    padding: 30px;
+    text-align: center;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+
+input {
+    height: 40px;
+    width: 450px;
+}

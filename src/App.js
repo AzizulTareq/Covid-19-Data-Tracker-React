@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import Item from './components/Item'
 import axios from 'axios'
+import './components/app.css'
 
 const App = () => {
 
@@ -46,11 +47,13 @@ const App = () => {
 
                 <h1>Data</h1>
 
+              <div className="search-bar">
                 <input
                   type="text"
-                  placeholder="Search Countries"
+                  placeholder="  Search Countries E.g. Bangladesh"
                   onChange={(e) => setSearch(e.target.value)}
                 />
+                </div>
 
                 <Item filteredCountries={filteredCountries} />
             </>
