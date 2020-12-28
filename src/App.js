@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState, useEffect} from 'react'
+import Item from './components/Item'
+import axios from 'axios'
+const App = () => {
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [loading, setLoading] = useState(false);
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+
+    setLoading(true);
+
+    const options = {
+        method: 'GET',
+        url: 'https://covid-193.p.rapidapi.com/statistics',
+        headers: {
+          'x-rapidapi-key': '7e8c93a99dmshdb4caa5345e9438p134a81jsne98d117e9e91',
+          'x-rapidapi-host': 'covid-193.p.rapidapi.com'
+        }
+      };
+      
+      axios.request(options).then(function (response) {
+        setLoading(false);  
+        setData(response.data.response);
+      }).catch(function (error) {
+          console.error(error);
+      });
+
+    }, [])
+
+
+
+    return (
+        <div>
+            {loading ? <p>Loading..</p> : <>
+                <h1>Data</h1>
+                <Item data={data} />
+
+
+            
+            </>
+        }
+        </div>
+    )
 }
 
-export default App;
+export default App
