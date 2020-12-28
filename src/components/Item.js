@@ -1,9 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './item.css'
 
-const Item = ({ data }) => {
-    
-    const renderItem = data.map((d) => {
+const Item = ({ filteredCountries }) => {
+    const renderItem = filteredCountries.map((d) => {
         return (
             <div key={d.country}>
                 <div className="ui card">
@@ -66,6 +65,7 @@ const Item = ({ data }) => {
     })
 
     return <div className="grid">{renderItem}</div>
+      
 }
 
 export default Item

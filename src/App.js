@@ -6,6 +6,8 @@ const App = () => {
 
     const [loading, setLoading] = useState(false);
     const [data, setData] = useState([]);
+    const [search, setSearch] = useState("");
+    const [filteredCountries, setFilteredCountries] = useState([]);
 
     useEffect(() => {
 
@@ -29,13 +31,28 @@ const App = () => {
 
     }, [])
 
+    useEffect(() => {
+      setFilteredCountries(
+        data.filter((da) =>
+          da.country.toLowerCase().includes(search.toLowerCase())
+        )
+      );
+    }, [search, data]);
 
-
+ 
     return (
         <div style={{padding: '30px'}}>
             {loading ? <p>Loading..</p> : <>
+
                 <h1>Data</h1>
-                <Item data={data} />
+
+                <input
+                  type="text"
+                  placeholder="Search Countries"
+                  onChange={(e) => setSearch(e.target.value)}
+                />
+
+                <Item filteredCountries={filteredCountries} />
             </>
         }
         </div>
