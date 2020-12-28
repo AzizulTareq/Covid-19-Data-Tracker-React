@@ -1,4 +1,5 @@
 import React from 'react'
+import './item.css'
 
 const Item = ({ data }) => {
     
@@ -6,7 +7,7 @@ const Item = ({ data }) => {
         return (
             <div key={d.country}>
                 <div className="ui card">
-  <div className="content" style={{display: 'flex'}}>
+  <div className="content every-card">
     <div className="header">{d.country}</div>
   </div>
   <div className="content">
@@ -15,7 +16,7 @@ const Item = ({ data }) => {
       <div className="event">
         <div className="content">
           <div className="summary">
-            deaths
+            xyz
           </div>
         </div>
       </div>
@@ -43,7 +44,7 @@ const Item = ({ data }) => {
         )
     })
 
-    return <div>{renderItem}</div>
+    return <div className="grid">{renderItem}</div>
 }
 
 export default Item

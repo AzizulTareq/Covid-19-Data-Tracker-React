@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
-import Item from './components/Item'
+import Item from './components/item'
 import axios from 'axios'
+
 const App = () => {
 
     const [loading, setLoading] = useState(false);
@@ -31,13 +32,10 @@ const App = () => {
 
 
     return (
-        <div>
+        <div style={{padding: '30px'}}>
             {loading ? <p>Loading..</p> : <>
                 <h1>Data</h1>
                 <Item data={data} />
-
-
-            
             </>
         }
         </div>
