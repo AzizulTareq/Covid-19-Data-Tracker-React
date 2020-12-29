@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import Item from './components/Item'
 import axios from 'axios'
-import './components/app.css'
+import './app.css'
 
 const App = () => {
 
@@ -45,12 +45,13 @@ const App = () => {
         <div style={{padding: '30px'}}>
             {loading ? <p>Loading..</p> : <>
 
-                <h1>Data</h1>
+                <h1 className="title1">COVID-19 DATA TRACKER</h1>
+                <h4 className="title1">( This page updates every 10 minutes )</h4>
 
               <div className="search-bar">
                 <input
                   type="text"
-                  placeholder="  Search Countries E.g. Bangladesh"
+                  placeholder="  Search Countries or Regions E.g. Bangladesh"
                   onChange={(e) => setSearch(e.target.value)}
                 />
                 </div>
