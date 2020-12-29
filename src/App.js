@@ -3,6 +3,7 @@ import Item from './components/Item'
 import axios from 'axios'
 import './app.css'
 
+
 const App = () => {
 
     const [loading, setLoading] = useState(false);
@@ -43,15 +44,18 @@ const App = () => {
  
     return (
         <div style={{padding: '30px'}}>
-            {loading ? <p>Loading..</p> : <>
+            {loading ? <p style={{color: '#fff'}}>Loading..</p> : <>
 
                 <h1 className="title1">COVID-19 DATA TRACKER</h1>
                 <h4 className="title1">( This page updates every 10 minutes )</h4>
+                <h4 className="title1"> <span>Developed by  </span> <br/> 
+                <a rel="noopener noreferrer" target="_blank" 
+                href="https://www.linkedin.com/in/azizultareq/">&nbsp; Azizul Tareq</a></h4>
 
               <div className="search-bar">
                 <input
                   type="text"
-                  placeholder="  Search Countries or Regions E.g. Bangladesh"
+                  placeholder=" Search Countries or Regions"
                   onChange={(e) => setSearch(e.target.value)}
                 />
                 </div>

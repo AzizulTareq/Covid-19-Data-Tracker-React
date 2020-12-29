@@ -7,8 +7,7 @@ const Item = ({ filteredCountries }) => {
             <div key={d.country}>
                 <div className="ui card">
   <div className="content">
-    <div className="header" style={{color: '#C41C77'}}>{d.country}</div>
-    <h5>Population:   <span className="second-word-formatting" style={{fontSize: '15px', color: '#D91B56'}}>{d.population}</span></h5>
+    <div className="header" style={{color: '#C41C77', fontSize: '20px'}}>{d.country}</div>
   </div>
  
   <div className="content">
