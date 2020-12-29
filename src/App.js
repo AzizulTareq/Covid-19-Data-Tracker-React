@@ -55,7 +55,7 @@ const App = () => {
               <div className="search-bar">
                 <input
                   type="text"
-                  placeholder=" Search Countries or Regions"
+                  placeholder="  Search Countries or Regions"
                   onChange={(e) => setSearch(e.target.value)}
                 />
                 </div>
